@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import HomeHeroSection from '../components/HomeHeroSection.astro';
+import Container  from '../../components/core/Container.astro';
+export function getStaticPaths() {
+    return [
+        {params: {skill: 'wpi'}},
+        {params: {skill: 'parkeren'}},
+        {params: {skill: 'belastingen'}},
+    ];
+}
+
+const { skill } = Astro.params;
+---
+<Layout title="Mijn Amsterdam | Welkom">
+    <Container>
+        <main>
+            <h1>Welkom <span class="text-gradient"> {skill}</span></h1>
+            <p class="instructions">
+                Welkom op de pagina {skill}!
+            </p>
+        </main>
+    </Container>
+</Layout>
+
+<style>
+
+    main {
+        margin: auto;
+        padding: 1rem;
+        width: 800px;
+        max-width: calc(100% - 2rem);
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+</style>
+
