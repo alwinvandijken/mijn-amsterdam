@@ -65,20 +65,18 @@ const { title } = Astro.props;
 					"Chat_Origin": "Website"
 				});
 
-				/**
-				 * Check if u want to turn on the chat button.
-				 */
-				// if (checkIfChatSessionIsCreated() || showChatBasedOnTaxonomy()) {
-				// 	// Shows the chat button
-				// 	embeddedservice_bootstrap.utilAPI.showChatButton();
-				// }
-
 				if (checkIfChatSessionIsCreated()) {
 					// Launches a chat and can be even used when the button is not visible
 					embeddedservice_bootstrap.utilAPI
 						.launchChat()
 						.then(function (success) {
-							// Add actions to run after the chat client launches successfully.
+							/**
+							 * Check if u want to turn on the chat button.
+							 */
+							if (checkIfChatSessionIsCreated() || showChatBasedOnTaxonomy()) {
+								// Shows the chat button
+								embeddedservice_bootstrap.utilAPI.showChatButton();
+							}
 						})
 						.catch(function (error) {
 							// Add actions to run after the chat client launch fails.
