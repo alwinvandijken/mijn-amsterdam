@@ -27,11 +27,11 @@ const { title } = Astro.props;
 					embeddedservice_bootstrap.settings.hideChatButtonOnLoad = true;
 
 					embeddedservice_bootstrap.init(
-						'00D7a000000574Q',
+						'00DMU0000008hP9',
 						'GemeenteAmsterdamMessagingWeb',
-						'https://omnichanneliv--test.sandbox.my.site.com/ESWGemeenteAmsterdamMessage',
+						'https://omnichanneliv--gat2.sandbox.my.site.com/ESWGemeenteAmsterdamMessa1732548814564',
 						{
-							scrt2URL: 'https://omnichanneliv--test.sandbox.my.salesforce-scrt.com'
+							scrt2URL: 'https://omnichanneliv--gat2.sandbox.my.salesforce-scrt.com'
 						}
 					);
 				} catch (err) {
@@ -40,7 +40,7 @@ const { title } = Astro.props;
 			};
 
 			function checkIfChatSessionIsCreated() {
-				const orgId = '00D7a000000574Q';
+				const orgId = '00DMU0000008hP9';
 				const storageItemSuffix = '_WEB_STORAGE';
 				const storageItem = localStorage.getItem(orgId + storageItemSuffix)
 
@@ -88,7 +88,7 @@ const { title } = Astro.props;
 				}
 			});
 		</script>
-		<script type='text/javascript' src='https://omnichanneliv--test.sandbox.my.site.com/ESWGemeenteAmsterdamMessage/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+		<script type='text/javascript' src='https://omnichanneliv--gat2.sandbox.my.site.com/ESWGemeenteAmsterdamMessage/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
 	</body>
 </html>
