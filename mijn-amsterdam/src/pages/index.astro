@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Chat from '../components/Chat.astro';
 import HomeHeroSection from '../components/HomeHeroSection.astro';
 import Container  from '../components/core/Container.astro';
 ---
@@ -9,16 +10,26 @@ import Container  from '../components/core/Container.astro';
 <Layout title="Mijn Amsterdam | Welkom">
 	<Container>
 		<HomeHeroSection />
+
+
 	</Container>
 	<main>
 
 		<h1>Welkom <span class="text-gradient"> op Mijn Amsterdam</span></h1>
 		<p class="instructions">
 
-			Uw Amsterdamse zaken op 1 plek.
+			Uw Amsterdamse zaken op 1 plek. (gat2)
 
 
 		</p>
+
+		<Chat
+			language="nl-NL"
+			service="GemeenteAmsterdamMessagingWeb"
+			title="Chat met ons"
+			orgId="00D7a0000005DOS"
+			url="https://omnichanneliv--dev.sandbox.my.site.com/ESWGemeenteAmsterdamMessage1"
+		/>
 
 	</main>
 </Layout>

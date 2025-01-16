@@ -1,0 +1,126 @@
+---
+interface Props {
+    title: string;
+    orgId: string;
+    url: string;
+    language: string;
+    service: string;
+}
+
+const { url,service, language, title, orgId } = Astro.props;
+---
+Hallo Chat
+org id: {orgId}
+<script type='text/javascript'>
+    function initEmbeddedMessaging() {
+        try {
+            embeddedservice_bootstrap.settings.language = 'nl-NL'; // For example, enter 'en' or 'en-US'
+
+            //Turns of the chat button
+            embeddedservice_bootstrap.settings.hideChatButtonOnLoad = true;
+
+            embeddedservice_bootstrap.init(
+                '{orgId}',
+                '{service}',
+                'https://omnichanneliv--gat2.sandbox.my.site.com/ESWGemeenteAmsterdamMessage1',
+                {
+                    scrt2URL: 'https://omnichanneliv--gat2.sandbox.my.salesforce-scrt.com'
+                }
+            );
+        } catch (err) {
+            console.error('Error loading Embedded Messaging: ', err);
+        }
+    };
+
+    function checkIfChatSessionIsCreated() {
+        const orgId = '00DMU0000008hP9';
+        const storageItemSuffix = '_WEB_STORAGE';
+        const storageItem = localStorage.getItem(orgId + storageItemSuffix)
+
+        let hasSession = false;
+        if (storageItem) {
+            const storageObj = JSON.parse(storageItem);
+            if (Object.keys(storageObj).length > 0) {
+                hasSession = true;
+            }
+        }
+
+        return hasSession;
+    }
+
+    function showChatBasedOnTaxonomy() {
+        return true;
+    }
+
+    window.addEventListener("onEmbeddedMessagingReady", e => {
+        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+            "Start_Location" : window.location.href,
+            "Chat_Origin": "Website"
+        });
+
+        /**
+         * Check if u want to turn on the chat button.
+         */
+        if (checkIfChatSessionIsCreated() || showChatBasedOnTaxonomy()) {
+            // Shows the chat button
+            setTimeout(() => {
+                embeddedservice_bootstrap.utilAPI.showChatButton();
+            }, 1000);
+        }
+
+        if (checkIfChatSessionIsCreated()) {
+            // Launches a chat and can be even used when the button is not visible
+            embeddedservice_bootstrap.utilAPI
+                .launchChat()
+                .then(function (success) {
+
+                })
+                .catch(function (error) {
+                    // Add actions to run after the chat client launch fails.
+                })
+                .finally(function () {
+                    // Add actions to run whether the chat client launches
+                    // successfully or not.
+                });
+        }
+    });
+</script>
+<script type='text/javascript' src='https://omnichanneliv--dev.sandbox.my.site.com/ESWGemeenteAmsterdamMessage1/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+<style is:global>
+:root {
+    --accent: 236, 0, 0;
+    --accent-light: 0, 70, 153;
+    --accent-dark: 0, 45, 90;
+    --accent-gradient: linear-gradient(
+    45deg,
+    rgb(var(--accent)),
+    rgb(var(--accent-light)) 30%,
+    white 60%
+    );
+    }
+html {
+    font-family: system-ui, sans-serif;
+    background: #13151a;
+    }
+code {
+    font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
+    }
+iframe#embeddedMessagingFrame {
+    border-radius: 0px !important;
+    }
+
+#embeddedMessagingFrame {
+    height: 544px;
+    width: 400px;
+    border-radius: 0px;
+    }
+</style>
