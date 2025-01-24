@@ -5685,7 +5685,7 @@
                 // Else, generate button markup only for unauth mode. For external site auth mode, markup is generated in #setIdentityToken() API.
                 // For MIAW in Channel Menu, static button markup is generated on menu item click in #bootstrapEmbeddedMessaging() API
                 if (getAuthMode() === AUTH_MODE.EXP_SITE_AUTH) {
-                    getExpSiteSessionTimeout();
+                    getExpSiteSessionTimeout(); //ok
                 } else if (sessionExists()) {
                     handleExistingSession();
                 } else if (getAuthMode() === AUTH_MODE.UNAUTH) {
