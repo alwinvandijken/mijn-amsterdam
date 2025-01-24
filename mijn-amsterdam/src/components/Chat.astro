@@ -22,9 +22,9 @@ org id: {orgId}
             embeddedservice_bootstrap.init(
                 '00DMU0000008hP9',
                 'GemeenteAmsterdamMessagingWeb',
-                'https://omnichanneliv--gat2.sandbox.my.site.com/ESWGemeenteAmsterdamMessa1732548814564',
+                'https://omnichanneliv--dev.sandbox.my.site.com/ESWGemeenteAmsterdamMessa1732548814564',
                 {
-                    scrt2URL: 'https://omnichanneliv--gat2.sandbox.my.salesforce-scrt.com'
+                    scrt2URL: 'https://omnichanneliv--dev.sandbox.my.salesforce-scrt.com'
                 }
             );
         } catch (err) {
@@ -85,7 +85,8 @@ org id: {orgId}
         }
     });
 </script>
-<script type='text/javascript' src='https://omnichanneliv--dev.sandbox.my.site.com/ESWGemeenteAmsterdamMessage1/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+<script type='text/javascript' src='src/assets/js/bootstrap.js' onload='initEmbeddedMessaging()'></script>
+
 
 <style is:global>
 :root {
