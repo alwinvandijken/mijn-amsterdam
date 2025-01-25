@@ -20,6 +20,54 @@ Hallo Chat
     <li>scrt2URL: {scrt2URL}</li>
 </ul>
 
+<style is:global>
+    :root {
+        --accent: 236, 0, 0;
+        --accent-light: 0, 70, 153;
+        --accent-dark: 0, 45, 90;
+        --accent-gradient: linear-gradient(
+                45deg,
+                rgb(var(--accent)),
+                rgb(var(--accent-light)) 30%,
+                white 60%
+        );
+    }
+    html {
+        font-family: system-ui, sans-serif;
+        background: #13151a;
+    }
+    code {
+        font-family:
+                Menlo,
+                Monaco,
+                Lucida Console,
+                Liberation Mono,
+                DejaVu Sans Mono,
+                Bitstream Vera Sans Mono,
+                Courier New,
+                monospace;
+    }
+    iframe#embeddedMessagingFrame {
+        border-radius: 0px !important;
+    }
+
+    /* Mobile styles (screens smaller than 48em, which is ~768px) */
+
+
+    /* Desktop styles (screens larger than 64em, which is ~1024px) */
+    @media screen and (min-width: 64em) {
+        #embeddedMessagingFrame {
+
+            height: var(--height);
+            width: var(--width);
+            //height: 37.5em; /* ~600px */
+            //width: 28.125em; /* ~450px */
+            border-radius: 0em;
+        }
+    }
+
+</style>
+
 <script type='text/javascript'>
     function initEmbeddedMessaging() {
         try {
@@ -98,47 +146,4 @@ Hallo Chat
 <script is:inline type='text/javascript' src='../assets/js/bootstrap.js' onload='initEmbeddedMessaging()'></script>
 
 
-<style is:global>
-:root {
-    --accent: 236, 0, 0;
-    --accent-light: 0, 70, 153;
-    --accent-dark: 0, 45, 90;
-    --accent-gradient: linear-gradient(
-    45deg,
-    rgb(var(--accent)),
-    rgb(var(--accent-light)) 30%,
-    white 60%
-    );
-    }
-html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    }
-code {
-    font-family:
-    Menlo,
-    Monaco,
-    Lucida Console,
-    Liberation Mono,
-    DejaVu Sans Mono,
-    Bitstream Vera Sans Mono,
-    Courier New,
-    monospace;
-    }
-iframe#embeddedMessagingFrame {
-    border-radius: 0px !important;
-    }
 
-/* Mobile styles (screens smaller than 48em, which is ~768px) */
-
-
-/* Desktop styles (screens larger than 64em, which is ~1024px) */
-@media screen and (min-width: 64em) {
-    #embeddedMessagingFrame {
-        height: 37.5em; /* ~600px */
-        width: 28.125em; /* ~450px */
-        border-radius: 0em;
-    }
-}
-
-</style>

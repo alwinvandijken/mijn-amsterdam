@@ -18,47 +18,5 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
-
-
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 236, 0, 0;
-		--accent-light: 0, 70, 153;
-		--accent-dark: 0, 45, 90;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-	iframe #embeddedMessagingFrame {
-		border-radius: 0px !important;
-		height: 544px;
-		width: 400px;
-		border-radius: 0px;
-	}
-
-	#embeddedMessagingFrame {
-		height: 544px;
-		width: 400px;
-		border-radius: 0px;
-	}
-</style>
