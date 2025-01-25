@@ -5,30 +5,23 @@ import Chat from '../components/Chat.astro';
 import HomeHeroSection from '../components/HomeHeroSection.astro';
 import Container  from '../components/core/Container.astro';
 ---
-
-
 <Layout title="Mijn Amsterdam | Welkom">
 	<Container>
 		<HomeHeroSection />
-
-
 	</Container>
 	<main>
-
 		<h1>Welkom <span class="text-gradient"> op Mijn Amsterdam</span></h1>
 		<p class="instructions">
-
 			Uw Amsterdamse zaken op 1 plek. (gat2)
-
-
 		</p>
 
 		<Chat
+			orgId="00D7a0000005DOS"
+			eswConfigDevName="GemeenteAmsterdamMessagingWeb"
+			siteURL="https://omnichanneliv--dev.sandbox.my.site.com/ESWGemeenteAmsterdamMessage1"
 			language="nl-NL"
-			service="GemeenteAmsterdamMessagingWeb"
+			scrt2URL="https://omnichanneliv--dev.sandbox.my.salesforce-scrt.com"
 			title="Chat met ons"
-			orgId="00DMU0000008hP9"
-			url="https://omnichanneliv--dev.sandbox.my.site.com/ESWGemeenteAmsterdamMessage1"
 		/>
 
 	</main>

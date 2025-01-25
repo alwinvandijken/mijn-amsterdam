@@ -1,16 +1,25 @@
 ---
 interface Props {
     title: string;
-    orgId: string;
-    url: string;
     language: string;
-    service: string;
+    orgId: string;
+    eswConfigDevName: string;
+    siteURL: string;
+    scrt2URL: string;
 }
 
-const { url,service, language, title, orgId } = Astro.props;
+const { orgId,eswConfigDevName, siteURL, scrt2URL,language, title, } = Astro.props;
 ---
 Hallo Chat
-org id: {orgId}
+<ul>
+    <li>title: {title}</li>
+    <li>language: {language}</li>
+    <li>org id: {orgId}</li>
+    <li>eswConfigDevName: {eswConfigDevName}</li>
+    <li>siteURL: {siteURL}</li>
+    <li>scrt2URL: {scrt2URL}</li>
+</ul>
+
 <script type='text/javascript'>
     function initEmbeddedMessaging() {
         try {
@@ -18,10 +27,10 @@ org id: {orgId}
 
             //Turns of the chat button
             embeddedservice_bootstrap.settings.hideChatButtonOnLoad = true;
-            // embeddedservice_bootstrap.settings.devMode = true;
+            embeddedservice_bootstrap.settings.devMode = true;
 
             embeddedservice_bootstrap.init(
-                '00D7a0000005DOS',
+                '{orgId}',
                 'GemeenteAmsterdamMessagingWeb',
                 'https://omnichanneliv--dev.sandbox.my.site.com/ESWGemeenteAmsterdamMessage1',
                 {
