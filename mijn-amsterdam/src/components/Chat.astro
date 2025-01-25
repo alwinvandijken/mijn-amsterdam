@@ -129,9 +129,16 @@ iframe#embeddedMessagingFrame {
     border-radius: 0px !important;
     }
 
-#embeddedMessagingFrame {
-    height: 544px;
-    width: 400px;
-    border-radius: 0px;
+/* Mobile styles (screens smaller than 48em, which is ~768px) */
+
+
+/* Desktop styles (screens larger than 64em, which is ~1024px) */
+@media screen and (min-width: 64em) {
+    #embeddedMessagingFrame {
+        height: 37.5em; /* ~600px */
+        width: 28.125em; /* ~450px */
+        border-radius: 0em;
     }
+}
+
 </style>
