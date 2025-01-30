@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Chat from '../components/Chat.astro';
 import HomeHeroSection from '../components/HomeHeroSection.astro';
+
 import Container  from '../components/core/Container.astro';
 ---
 <Layout title="Mijn Amsterdam | Welkom">
@@ -14,22 +15,8 @@ import Container  from '../components/core/Container.astro';
 		<p class="instructions">
 			Uw Amsterdamse zaken op 1 plek. (gat2)
 		</p>
-
-		<Chat
-			orgId="00D7a0000005DOS"
-			eswConfigDevName="GemeenteAmsterdamMessagingWeb"
-			siteURL="https://omnichanneliv--dev.sandbox.my.site.com/ESWGemeenteAmsterdamMessage1"
-			language="nl-NL"
-			scrt2URL="https://omnichanneliv--dev.sandbox.my.salesforce-scrt.com"
-			title="Chat met ons"
-		/>
-
 	</main>
 </Layout>
-
-<style>
-
-</style>
 
 <style>
 
@@ -38,7 +25,7 @@ import Container  from '../components/core/Container.astro';
 		padding: 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
-		color: white;
+		color: #000000;
 		font-size: 20px;
 		line-height: 1.6;
 	}

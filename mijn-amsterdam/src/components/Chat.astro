@@ -9,6 +9,16 @@ interface Props {
 }
 
 const { orgId,eswConfigDevName, siteURL, scrt2URL,language, title, } = Astro.props;
+
+const data = {
+    title: 'Chat met ons',
+
+}
+console.log('data: '+data)
+console.log('Hello Chat');
+console.log(orgId);
+console.log(siteURL);
+console.log(language);
 ---
 Hallo Chat
 <ul>
@@ -69,6 +79,9 @@ Hallo Chat
 </style>
 
 <script type='text/javascript'>
+
+    console.log('Chat component loaded');
+
     function initEmbeddedMessaging() {
         try {
             embeddedservice_bootstrap.settings.language = 'nl_NL'; // For example, enter 'en' or 'en-US'

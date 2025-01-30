@@ -49,7 +49,6 @@
     const FILE_PREVIEW_IFRAME_NAME = "embeddedMessagingFilePreviewFrame";
     const FILE_PREVIEW_IFRAME_DEFAULT_TITLE = "Enlarged image preview";
     const SITE_CONTEXT_IFRAME_NAME = "embeddedMessagingSiteContextFrame";
-    const SITE_CONTEXT_IFRAME_LANGUAGE = 'nl';
     const SLDS_ASSISTIVE_TEXT = "slds-assistive-text";
     const MINIMIZED_NOTIFICATION_AREA_CLASS = "embeddedMessagingMinimizedNotification";
     const MINIMIZED_NOTIFICATION_AREA_TEXT_WRAPPER_CLASS = MINIMIZED_NOTIFICATION_AREA_CLASS + "TextWrapper";
@@ -5214,7 +5213,6 @@
         siteContextFrame.id = SITE_CONTEXT_IFRAME_NAME;
         siteContextFrame.name = SITE_CONTEXT_IFRAME_NAME;
         siteContextFrame.src = siteContextFrameUrl.href;
-        siteContextFrame.lang = SITE_CONTEXT_IFRAME_LANGUAGE;
 
         siteContextFrame.onload = () => {
             log("createSiteContextFrame", `Created an iframe for siteContext.`);
