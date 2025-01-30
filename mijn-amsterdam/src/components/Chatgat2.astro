@@ -1,20 +1,73 @@
 ---
 
 ---
+
+<style is:global>
+    :root {
+        --accent: 236, 0, 0;
+        --accent-light: 0, 70, 153;
+        --accent-dark: 0, 45, 90;
+        --accent-gradient: linear-gradient(
+                45deg,
+                rgb(var(--accent)),
+                rgb(var(--accent-light)) 30%,
+                white 60%
+        );
+    }
+    html {
+        font-family: system-ui, sans-serif;
+        background: #13151a;
+    }
+    code {
+        font-family:
+                Menlo,
+                Monaco,
+                Lucida Console,
+                Liberation Mono,
+                DejaVu Sans Mono,
+                Bitstream Vera Sans Mono,
+                Courier New,
+                monospace;
+    }
+    iframe#embeddedMessagingFrame {
+        border-radius: 0px !important;
+    }
+
+    /* Mobile styles (screens smaller than 48em, which is ~768px) */
+
+
+    /* Desktop styles (screens larger than 64em, which is ~1024px) */
+    @media screen and (min-width: 64em) {
+        #embeddedMessagingFrame {
+
+            height: var(--height);
+            width: var(--width);
+            //height: 37.5em; /* ~600px */
+            //width: 28.125em; /* ~450px */
+            border-radius: 0em;
+        }
+    }
+
+</style>
+
 <script type='text/javascript'>
 
-    console.log('Chat prod component loaded');
+    console.log('Chat gat2 component loaded');
 
     function initEmbeddedMessaging() {
         try {
-            embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+            embeddedservice_bootstrap.settings.language = 'nl-NL'; // For example, enter 'en' or 'en-US'
+
+            //Turns of the chat button
+            embeddedservice_bootstrap.settings.hideChatButtonOnLoad = true;
+            embeddedservice_bootstrap.settings.devMode = true;
 
             embeddedservice_bootstrap.init(
-                '00D68000000aIuV',
+                '00DMU0000008hP9',
                 'GemeenteAmsterdamMessagingWeb',
-                'https://omnichanneliv.my.site.com/ESWGemeenteAmsterdamMessa1737025318356',
+                'https://omnichanneliv--gat2.sandbox.my.site.com/ESWGemeenteAmsterdamMessa1732548814564',
                 {
-                    scrt2URL: 'https://omnichanneliv.my.salesforce-scrt.com'
+                    scrt2URL: 'https://omnichanneliv--gat2.sandbox.my.salesforce-scrt.com'
                 }
             );
         } catch (err) {
@@ -22,8 +75,10 @@
         }
     };
 
+
+
     function checkIfChatSessionIsCreated() {
-        const orgId = '00D68000000aIuV';
+        const orgId = '00DMU0000008hP9';
         const storageItemSuffix = '_WEB_STORAGE';
         const storageItem = localStorage.getItem(orgId + storageItemSuffix)
 
@@ -75,6 +130,7 @@
         }
     });
 </script>
-<script type='text/javascript' src='https://omnichanneliv.my.site.com/ESWGemeenteAmsterdamMessa1737025318356/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+<script is:inline type='text/javascript' src='../assets/js/bootstrap.js' onload='initEmbeddedMessaging()'></script>
+
 
 
